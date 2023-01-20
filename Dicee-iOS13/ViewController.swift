@@ -21,7 +21,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func rollButtonPressed(_ sender: Any) {
-        diceImageView1.image = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")][leftDiceNumber]
+        let diceArray = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
+        
+        var diceValue1 = Int.random(in: 0...5)
+        var diceValue2 = Int.random(in: 0...5)
+        diceImageView1.image = diceArray[diceValue1]
+        diceImageView2.image = diceArray[diceValue2]
     }
     
 }
